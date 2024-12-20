@@ -4,13 +4,11 @@ html, body {
     padding: 0;
     height: 100%;
     font-family: Arial, sans-serif;
-    background-color: #000;
+    background-color: #000000;
     background-image: url('main-bg.gif');
-    background-repeat: no-repeat;
-    background-size: cover;
+   
     background-attachment: fixed;
-    
-    animation: fadeInAnimation ease 1s;
+        animation: fadeInAnimation ease 3s;
             animation-iteration-count: 1;
             animation-fill-mode: forwards;
         }
@@ -55,6 +53,7 @@ body {
         cursor: pointer; /* Ensures the pointer appears only on the logo area */
         pointer-events: auto; /* Ensures the image is clickable */
         user-select: none; /* Prevents image text selection */
+        
     }
     
     /* Ensure the body and other elements do not show pointer cursor */
@@ -74,7 +73,7 @@ body {
 }
 
 .navbar-btn {
-    background-color: #33333300;
+    background-color: #00000000;
     color: #fff;
     text-decoration: none;
     padding: 10px 15px;
@@ -86,7 +85,7 @@ body {
 
 /* Navbar Hover Effect */
 .navbar-btn:hover {
-color: #323232;
+color: #000000;
 }
 
 /* Subtitle Container */
@@ -122,6 +121,19 @@ color: #323232;
     flex-grow: 1; /* Ensures this section grows to fill available space */
     opacity: 0.9;
     filter: grayscale(%) brightness(150%) contrast(200%) saturate(0);
+    animation: fadeInAnimation ease 5s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
 }
 
 #BeatStars iframe {
