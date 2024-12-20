@@ -9,12 +9,28 @@ html, body {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    
+    animation: fadeInAnimation ease 1s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        
 }
 
 body {
     display: flex;
     flex-direction: column;
     height: 100%;
+    cursor: default; /* Ensures default cursor is shown for the body */
 }
 
 /* Header Styles */
@@ -23,15 +39,28 @@ body {
     top: 10px;
     left: 10px;
     z-index: 100;
-}
-
-.title-container {
-    text-align: left;
-}
-
-.title-container img {
-    max-width: 100%;
-    height: auto;
+    #logo-button {
+        display: inline-block; /* Keeps the link as a block around the image */
+        text-decoration: none; /* Removes underline */
+    }
+    
+    .title-container {
+        display: inline-block; /* Makes sure the image is contained properly */
+    }
+    
+    .title-container img {
+        display: block; /* Ensures the image itself is a block-level element */
+        max-width: 100%;
+        height: auto;
+        cursor: pointer; /* Ensures the pointer appears only on the logo area */
+        pointer-events: auto; /* Ensures the image is clickable */
+        user-select: none; /* Prevents image text selection */
+    }
+    
+    /* Ensure the body and other elements do not show pointer cursor */
+    body, html {
+        cursor: default; /* Default cursor for the rest of the page */
+    }
 }
 
 /* Navbar Styles */
@@ -69,6 +98,7 @@ color: #323232;
     background-color: rgba(156, 39, 39, 0); /* Semi-transparent background */
     padding: 10px;
     z-index: 100;
+    user-select: none;
 }
 
 #subtitle p {
@@ -90,6 +120,8 @@ color: #323232;
     padding: 20px;
     text-align: center;
     flex-grow: 1; /* Ensures this section grows to fill available space */
+    opacity: 0.9;
+    filter: grayscale(%) brightness(150%) contrast(200%) saturate(0);
 }
 
 #BeatStars iframe {
