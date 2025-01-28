@@ -1,17 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="background-color: #000;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BensaBeatstore</title>
+    <link rel="icon" href="logo.png" type="image/png">
     <link href="global.css" rel="stylesheet" type="text/css" />
-    <div id="navbar">
-        <div class="navbar-container">
-            <a href="https://www.youtube.com/@tbonemadeit" class="navbar-btn">YouTube</a>
-            <a href="#" class="navbar-btn">Gallery</a>
-            <a href="#" class="navbar-btn">Projects</a>
-        </div>
-    </div>
 </head>
 <body>
     <div class="title-container">
@@ -20,12 +14,27 @@
                 <img src="your-logo.png" alt="Title">
             </a>
     </div>
+    <div id="navbar">
+        <div class="navbar-container">
+            <div class="dropdown">
+                <a class="dropdown-btn">youtube</a>
+                <div class="dropdown-menu">
+                    <a href="https://www.youtube.com/channel/UCCQ2zE_ftKqpPJPudgIqXHg/">📹 tbone</a>
+                    <a href="https://www.youtube.com/channel/UCP8KzyMBcWZWjfmu0W2afcw/">🦾 flxtra</a>
+                    <a href="https://www.youtube.com/channel/UCQD39qm0lfaLzPJMySLolDA/">🎻 trap</a>
+                    <a href="https://www.youtube.com/channel/UCY5OyTbBJh6KvJtDc0CKVkw/">🌠 999</a>
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="MainText">
         <div id="subtitle">
             <p><em>(finnish) gas, gasoline - by tbone</em></p>
         </div>
         <div id="BeatStars">
-            <iframe src="https://player.beatstars.com/?storeId=149574" width="1500" height="800" style="max-width: 100%;"></iframe>
+            <div class="iframe-container">
+                <iframe src="https://player.beatstars.com/?storeId=149574" width="1500" height="800" style="max-width: 100%;"></iframe>
+            </div>
         </div>
     </div>
     <div id="Footer">
@@ -33,3 +42,4 @@
     </div>
 </body>
 </html>
+ 
