@@ -1,24 +1,11 @@
-/* Global Styles */
 html, body {
     margin: 0;
     padding: 0;
     height: 100%;
     font-family: Arial, sans-serif;
-    background-color: #000;
+    background-color: #000; /* Ensure black is the base color */
     background-image: url('main-bg.gif');
     background-attachment: scroll;
-    animation: fadeInAnimation ease 3s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-}
-
-@keyframes fadeInAnimation {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
 }
 
 body {
@@ -33,11 +20,12 @@ body {
     position: absolute;
     top: 10px;
     left: 10px;
-    z-index: 100;
+    z-index: 1000; /* Ensure header is on top */
 }
 
 .title-container {
     display: inline-block;
+    z-index: 150; /* Make sure title stays on top of other elements */
 }
 
 .title-container img {
@@ -45,8 +33,6 @@ body {
     max-width: 100%;
     height: auto;
     cursor: pointer;
-    pointer-events: auto;
-    user-select: none;
 }
 
 /* Navbar Styles */
@@ -56,7 +42,7 @@ body {
     right: 20px; /* Snaps navbar to the right */
     display: flex;
     gap: 15px; /* Adjusted gap for better spacing */
-    z-index: 1000;
+    z-index: 10;
 }
 
 .navbar-btn {
@@ -140,7 +126,7 @@ body {
     width: 360px;
     background-color: rgba(156, 39, 39, 0);
     padding: 10px;
-    z-index: 100;
+    z-index: 1;
     user-select: none;
 }
 
@@ -164,21 +150,54 @@ body {
     text-align: center;
     flex-grow: 1;
     filter: grayscale(900%) brightness(90%) contrast(100%) saturate(0);
-    animation: fadeInAnimation ease 5s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+    /* Removed animation here for fading effect to be controlled only for iframe */
 }
 
+.overlay-black {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    z-index: 10; /* Ensure it's on top of the content */
+    animation: fadeIn 2s ease-in forwards;
+    pointer-events: auto;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        display: none; /* This removes the overlay from the DOM after fading out */
+    }
+}
+
+
 .iframe-container {
-    position: relative;
-    top: 70px;
+    position: absolute;
+    left: 0px;
     width: 100%;
     height: auto;
+    background-color: #000;
+    z-index: 1;
 }
 
 #BeatStars iframe {
     width: 100%;
     height: 800px;
     border: none;
-    opacity: 1;
+    opacity: 0; /* Set initial opacity to 0 */
+    background-color: #000;
+    animation: iframeFadeIn 2s ease-in forwards; /* Fades in only the iframe */
+}
+
+@keyframes iframeFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
